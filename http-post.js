@@ -3,16 +3,16 @@ import { check } from 'k6';
 import {sharedArray} from 'k6/data';
 import { randomString } from 'https://jslib.k6.io/k6-utils/1.2.0/index.js';
 
-const userCredentials = new sharedArray('credentials', function () {
-    let data;
-    try {
-        data = JSON.parse(open('./users.json'));
-    } catch (e) {
-        console.error('Could not open or parse users.json:', e);
-        data = { users: [] };
-    }
-    return Array.isArray(data.users) ? data.users : [];
-})
+// const userCredentials = new sharedArray('credentials', function () {
+//     let data;
+//     try {
+//         data = JSON.parse(open('./users.json'));
+//     } catch (e) {
+//         console.error('Could not open or parse users.json:', e);
+//         data = { users: [] };
+//     }
+//     return Array.isArray(data.users) ? data.users : [];
+// })
 
 export default function () {
 
